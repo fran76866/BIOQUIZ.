@@ -86,16 +86,16 @@ void main() {
 
     String resposta = '';
 
-    while (!['A', 'B', 'C', 'D'].contains(resposta)) {
+    while (!respostaValida(resposta)) {
       stdout.write('\nSua resposta: ');
-      resposta = (stdin.readLineSync() ?? '').trim().toUpperCase();
+      resposta = normalizarResposta(stdin.readLineSync() ?? '');
 
-      if (!['A', 'B', 'C', 'D'].contains(resposta)) {
+      if (!respostaValida(resposta)) {
         print('Resposta inválida! Digite A, B, C ou D.');
       }
     }
 
-    if (resposta == pergunta['correta']) {
+    if (verificarResposta(resposta, pergunta['correta'])) {
       print('Muito bem! Você acertou! 🎉');
       pontuacao++;
     } else {
@@ -124,4 +124,33 @@ void mostrarResultado(String nome, int pontuacao, int total) {
 
   print('\nObrigado por jogar BIOQUIZ!');
   print('================================');
+}
+
+String normalizarResposta(String resposta) {
+  return resposta.trim().toUpperCase();
+}
+
+bool respostaValida(String resposta) {
+  return ['A', 'B', 'C', 'D'].contains(
+    normalizarResposta(resposta),
+  );
+}
+
+bool verificarResposta(String resposta, String correta) {
+  return normalizarResposta(resposta) == correta;
+}
+
+int calcularPontuacao(
+  List<String> respostas,
+  List<String> corretas,
+) {
+  int pontos = 0;
+
+  for (int i = 0; i < respostas.length; i++) {
+    if (verificarResposta(respostas[i], corretas[i])) {
+      pontos++;
+    }
+  }
+
+  return pontos;
 }
