@@ -24,6 +24,15 @@ EXEMPLOS DE PERGUNTAS:
 
 Resposta correta: B) Célula.
 
+TESTES REALIZADOS:
+
+[X] Se todas as perguntas e alternativas aparecem corretamente.
+[X] Se o programa identifica respostas certas e erradas.
+[X] Se as respostas incorretas apresentam a alternativa correta.
+[X] Se letras maiúsculas e minúsculas são aceitas.
+[X] Se respostas inválidas são tratadas corretamente.
+[X] Se a pontuação final corresponde à quantidade de acertos.
+
 TECNOLOGIAS UTILIZADAS:
 - Dart
 - Entrada e saída de dados pelo terminal
@@ -33,15 +42,10 @@ TECNOLOGIAS UTILIZADAS:
 COMO EXECUTAR:
 1. Abra o terminal na pasta do projeto.
 2. Execute o comando:
-
-```bash
-dart run
-```
-
+ bash dart run
 3. Digite seu nome e comece a responder às perguntas.
 
 USO DE INTELIGENCIA ARTIFICIAL:
 O ChatGPT foi utilizado como ferramenta de apoio durante o desenvolvimento do projeto, auxiliando na organização do código, na explicação dos conceitos de Dart e na orientação dos passos de criação e execução.
-
 O código foi adaptado e executado para verificar seu funcionamento, incluindo a validação das respostas e o cálculo da pontuação.
 
